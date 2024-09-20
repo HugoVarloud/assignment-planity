@@ -19,11 +19,9 @@ const upload = multer({ storage })
 
 app.post('/api/file-upload', upload.single('file'), (req, res) => {
     try {
-      console.log('', req.file);
-      
         res.json(req.file);
     } catch (error) {
         res.status(500).json({ error: error });
     }
-})
+});
 app.listen(3000, () => console.log('RUNNING ON PORT 3000'));
