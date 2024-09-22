@@ -14,12 +14,8 @@ const UploadButton = () => {
       formData.append('file', file);
 
       try {
-        const response = await axios.post(`${import.meta.env.VITE_API_PATH}/file-upload`, formData, {
-          headers: {
-  
-          }
-        });
-  
+        const response = await axios.post(`${import.meta.env.VITE_API_PATH}/upload`, formData);
+
         if (response.status === 200) {
           alert('Success')
         } else {
@@ -29,7 +25,7 @@ const UploadButton = () => {
         console.log(error);
       }
     }
-
+    
     const handleFileChange = (event) => {    
       setFile(event.target.files[0]);
     }
