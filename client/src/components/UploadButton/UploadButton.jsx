@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { uploadFileThunk } from '../../slices/fileSlice';
+import axios from 'axios';
 import './UploadButton.css';
 
 const UploadButton = () => {
@@ -19,10 +19,18 @@ const UploadButton = () => {
     }
 
     try {
-      const response = await dispatch(uploadFileThunk(file)).unwrap();
+      const formData = new FormData();
+      formData.append('file', file);
+      console.log('FORM DATA ', formData);
+      
+      // Make sure to handle the response properly
+      const response = await axios.post(`${import.meta.env.VITE_API_PATH}/files/uploads`, formData, {
+        responseType: 'blob',
+      });
+      console.log("Response ", response);
 
-      if (response) {
-        handleDownloadZip(response);
+      if (response && response.data) {
+        handleDownloadZip(response.data);  // Only pass the file data
       }
     } catch (err) {
       console.error("Error uploading file", err);
@@ -30,6 +38,7 @@ const UploadButton = () => {
   };
 
   const handleDownloadZip = (zipBlob) => {
+    // Now zipBlob is just the binary data (response.data), not the entire response object
     const blob = new Blob([zipBlob], { type: 'application/zip' });
     const downloadUrl = URL.createObjectURL(blob);
     const link = document.createElement('a');
