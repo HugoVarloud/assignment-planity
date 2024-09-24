@@ -6,6 +6,6 @@ const app = express();
 
 app.use(express.json());
 app.use(cors());
-app.use('/api/upload', uploadRoutes);
+app.use('/api/files', uploadRoutes);
 
 app.listen(PORT, () => console.log(`Server is running on port: ${PORT}`));
