@@ -1,3 +1,5 @@
+<h1>Zip Generator</h1>
+
 About the Project: 📚
 The purpose of this test is to evaluate skills in React interface development and Node.js API, as well as the ability to efficiently handle a CSV file. The candidate must create a user interface for uploading a CSV file, send it to a Node.js API that processes the file, and then return the zipped result to the client.
 
