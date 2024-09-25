@@ -34,8 +34,8 @@ List of the tools and technologies used to build this project :
 -Mui
 
 Setup / Installation: 💻
-Dans /planity/server - cli : npm run start 
-Dans /planity/client - cli : npm run dev 
+Dans /planity/server - run cli : npm i && npm run start <br/>
+Dans /planity/client - run cli : npm i && npm run dev <br/>
 
 Approach: 🚶
 I focused more on the upload and download and interface experience than the csv handle that I kept as a final task (still in development).
