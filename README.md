@@ -38,6 +38,7 @@ Dans /planity/server - cli : npm run start
 Dans /planity/client - cli : npm run dev 
 
 Approach: 🚶
+I focused more on the upload and download and interface experience than the csv handle that I kept as a final task (still in development).
 Server side : I created a classic 3 layer server (routes, controllers, services) with express including a zipfile and cleaning service to make sure I send back the archive without storing unecessory files.
 Client side : At first I wanted to handle the progress bar to be depending on the state of my slices but I encountered serialisation problems due to the type of data that I was manipulating (blob) so I choose what I think is a simpler approach.
 I handle the progress bar in the component now. I am sure there is a way to handle it using slices but I decided no to follow that approach.
