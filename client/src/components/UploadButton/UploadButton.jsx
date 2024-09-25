@@ -38,7 +38,6 @@ const UploadButton = () => {
 
     try {
       setUploadStatus("uploading");
-
       const formData = new FormData();
       formData.append("file", file);
 
