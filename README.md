@@ -23,7 +23,7 @@ Screenshots: 📷
 <img width="1440" alt="Capture d’écran 2024-09-25 à 12 03 24" src="https://github.com/user-attachments/assets/6a83bd60-50aa-42e8-bd84-b8af8f9dbce5">
 
 Technologies Used: ☕️ 🐍 ⚛️
-List the tools and technologies used to build this project :
+List of the tools and technologies used to build this project :
 -Node
 -React
 -Vite
